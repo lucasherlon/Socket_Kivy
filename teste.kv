@@ -1,0 +1,25 @@
+<Caixa>:
+    orientation: 'vertical'
+    padding: 20
+    Label:
+        text: 'Teste Sockets'
+        font_size: 40
+    Label:
+        text: 'Digite a mensagem a ser enviada:'
+        font_size: 28
+        text_size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        TextInput:
+            id: pr1
+            multiline: False
+        Label:
+            id: p1
+            font_size: 20
+        Button:
+            text: 'Escutar'
+            on_release: root.receber()
+        Button:
+            text: 'Enviar Mensagem'
+            on_release: root.enviar()
