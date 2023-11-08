@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 import socket
 
-
+#Classe que se comunica com a interface Kivy
 class Caixa(BoxLayout):
     def enviar(self):
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -40,6 +40,7 @@ class Caixa(BoxLayout):
         client_socket.close()
         server_socket.close()
 
+#Classe principal da aplicação
 class Teste(App):
     def build(self):
         return Caixa()
