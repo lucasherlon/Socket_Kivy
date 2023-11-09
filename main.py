@@ -7,7 +7,7 @@ class Caixa(BoxLayout):
     def enviar(self):
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        host = '127.0.0.1' 
+        host = self.ids.ip.text
         port = 12345  
         client_socket.connect((host, port))
 
@@ -15,7 +15,7 @@ class Caixa(BoxLayout):
         message = self.ids.pr1.text
         client_socket.send(message.encode('utf-8'))
 
-        #Fechamento do socket
+        # Fechamento do socket
         client_socket.close()
 
     def receber(self):
@@ -23,7 +23,7 @@ class Caixa(BoxLayout):
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         # Seta a porta de escuta e o host
-        host = '127.0.0.1'  
+        host = '0.0.0.0'
         port = 12345  
         server_socket.bind((host, port))
 

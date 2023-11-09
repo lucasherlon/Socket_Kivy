@@ -5,15 +5,22 @@
     Label:
         text: 'Teste Sockets'
         font_size: 40
-    Label:
-        text: 'Digite a mensagem a ser enviada:'
-        font_size: 28
-        text_size: self.size
     BoxLayout:
         orientation: 'vertical'
         spacing: 10
+        Label:
+            text: 'Digite a mensagem a ser enviada:'
+            font_size: 20
+            text_size: self.size
         TextInput:
             id: pr1
+            multiline: False
+        Label:
+            text: 'Digite o numero de ip do destinatario'
+            font_size: 20
+            text_size: self.size
+        TextInput:
+            id: ip
             multiline: False
         Label:
             id: p1
