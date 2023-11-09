@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 import socket
 
-#Classe que se comunica com a interface Kivy
+# Classe que se comunica com a interface Kivy
 class Caixa(BoxLayout):
     def enviar(self):
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -22,7 +22,7 @@ class Caixa(BoxLayout):
         # Cria socket
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        #Seta a porta de escuta e o host
+        # Seta a porta de escuta e o host
         host = '127.0.0.1'  
         port = 12345  
         server_socket.bind((host, port))
@@ -40,7 +40,7 @@ class Caixa(BoxLayout):
         client_socket.close()
         server_socket.close()
 
-#Classe principal da aplicação
+# Classe principal da aplicação
 class Teste(App):
     def build(self):
         return Caixa()
